@@ -1,0 +1,125 @@
+/* Variables */
+:root {
+  --cyan: rgb(42, 178, 175);
+  --off-cyan: rgb(50, 192, 190);
+  --bright-yellow: rgb(192, 223, 52);
+  --light-gray: rgb(229, 239, 245);
+  --grayish-blue: rgb(152, 166, 189);
+  --background: rgb(34, 34, 34);
+  --white: rgb(253, 253, 253);
+  --off-white: rgba(253, 253, 253, 0.7);
+}
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilites */
+
+.primary-text{color: var(--cyan);}
+.secondary-text{color: var(--bright-yellow);}
+.small-text{font-size: 16px;}
+.off-white{color: var(--off-white);}
+.gray{color: var(--grayish-blue);}
+
+/*  */
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  padding-top: 100px;
+}
+
+/* Card Container */
+
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Card Boxes */
+
+.box {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card .header {
+  background-color: var(--white);
+  height: 200px;
+}
+.card .price {
+  background-color: var(--cyan);
+  color: var(--white);
+  height: 250px;
+}
+.card .why-us {
+  background-color: var(--off-cyan);
+  color: var(--white);
+  height: 250px;
+}
+
+/* Price Info */
+
+.price-info {
+  display: flex;
+  align-items: center;
+}
+
+.large-text {
+    color: var(--white);
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+/* Sign Up Button */
+.sign-up {
+  background-color: var(--bright-yellow);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 594px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.8fr 1.2fr;
+    grid-template-areas:
+      "header header"
+      "price whyUs";
+  }
+
+  .card .header {
+    grid-area: header;
+    padding: 30px;
+  }
+  .card .price {
+    grid-area: price;
+    padding: 30px;
+  }
+  .card .why-us {
+    grid-area: whyUs;
+    padding: 30px;
+  }
+}
